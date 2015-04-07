@@ -1,5 +1,7 @@
+# BOWER
 bower_components
+
+# NODE/NPM/GRUNT
 node_modules
-.npmignore
-.jshintignore
 npm-debug.log
+.npm-debug.log
