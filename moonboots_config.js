@@ -13,7 +13,6 @@ module.exports = {
     cssFileName: 'bike',
     main: appDir + '/app.js',
     developmentMode: config.isDev,
-    buildDirectory: __dirname + '/_build',
     libraries: [],
     stylesheets: [
       bowerDir + '/skeleton/css/normalize.css',
