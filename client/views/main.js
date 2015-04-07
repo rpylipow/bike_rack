@@ -29,21 +29,28 @@
       return this.listenTo(app, 'page', this.handleNewPage);
     },
     render: function() {
-      document.head.appendChild(domify(templates.head()));
+      var head, typekit;
+      head = document.head;
+      head.insertBefore(domify(templates.head()), head.childNodes[0]);
+      typekit = document.createElement('script');
+      typekit.type = 'text/javascript';
+      typekit.text = "(function(d) { var config = { kitId: 'vdl0aju', scriptTimeout: 3000 }, h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,\"\")+\" wf-inactive\";},config.scriptTimeout),tk=d.createElement(\"script\"),f=false,s=d.getElementsByTagName(\"script\")[0],a;h.className+=\" wf-loading\";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!=\"complete\"&&a!=\"loaded\")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s) })(document);";
+      head.insertBefore(typekit, head.childNodes[2]);
       this.renderWithTemplate(this);
       this.pageSwitcher = new ViewSwitcher(this.queryByHook('page-container'), {
-        show: function(newView, oldView) {
-          document.title = result(newView, 'pageTitle') || 'Rdio Client App';
-          document.scrollTop = 0;
-          dom.addClass(newView.el, 'active');
-          return app.currentPage = newView;
-        }
+        show: (function(_this) {
+          return function(newView, oldView) {
+            document.title = result(newView, 'pageTitle') || 'Chicago Bike Racks';
+            document.scrollTop = 0;
+            dom.addClass(newView.el, 'active');
+            return app.currentPage = newView;
+          };
+        })(this)
       });
       return setFavicon('/favicon.ico');
     },
     handleNewPage: function(view) {
-      this.pageSwitcher.set(view);
-      return this.updateActiveNav();
+      return this.pageSwitcher.set(view);
     },
     handleLinkClick: function(e) {
       var localPath;
@@ -52,19 +59,6 @@
         e.preventDefault();
         return app.navigate(localPath);
       }
-    },
-    updateActiveNav: function() {
-      var path;
-      path = window.location.pathname.slice(1);
-      return this.queryAll('.nav a[href]').forEach(function(aTag) {
-        var aPath;
-        aPath = aTag.pathname.slice(1);
-        if (!aPath && !path || aPath && path.indexOf(aPath) === 0) {
-          return dom.addClass(aTag.parentNode, 'active');
-        } else {
-          return dom.removeClass(aTag.parentNode, 'active');
-        }
-      });
     }
   });
 

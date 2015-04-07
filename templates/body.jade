@@ -1,10 +1,26 @@
 body
-  nav
-    ul.container
-      li
-        a(href='/') Rdio Client App
-      li
-        a(href="/info") more info
-  
+  section.sidebar
+    .sidebar-wrapper  
+      header
+        h1
+          a(href='/') Bike Rack
+      
+      form
+        .form-group(data-hook='test')
+          label South Loop
+        .form-group
+          label Loop
+        .form-group
+          label Lincoln Park
+        .form-group
+          label Lake View
+        .form-group
+          label River North
+        .form-group
+          label Streeterville
+
+      footer  
+        a(href='/info')
+          small About this project
   main(data-hook="page-container")
     

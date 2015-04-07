@@ -1,5 +1,5 @@
 (function() {
-  var HomePage, InfoPage, Router, app;
+  var HomePage, InfoPage, RacksCollection, Router, app;
 
   app = require('ampersand-app');
 
@@ -9,21 +9,22 @@
 
   InfoPage = require('./pages/info');
 
+  RacksCollection = require('./collections/racks_collection');
+
   module.exports = Router.extend({
     routes: {
       '': 'home',
       'info': 'info',
+      'search': 'search',
       '(*path)': 'catchAll'
     },
     home: function() {
       return app.trigger('page', new HomePage({
-        model: app.me
+        collection: new RacksCollection()
       }));
     },
     info: function() {
-      return app.trigger('page', new InfoPage({
-        model: app.me
-      }));
+      return app.trigger('page', new InfoPage());
     },
     catchAll: function() {
       return this.redirectTo('');

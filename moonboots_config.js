@@ -9,8 +9,8 @@ var cssDir = __dirname + '/stylesheets';
 module.exports = {
   appPath: '/{p*}',
   moonboots: {
-    jsFileName: 'rdio-client-app',
-    cssFileName: 'rdio-client-app',
+    jsFileName: 'bike',
+    cssFileName: 'bike',
     main: appDir + '/app.js',
     developmentMode: config.isDev,
     libraries: [],

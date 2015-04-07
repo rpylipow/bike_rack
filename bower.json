@@ -1,8 +1,7 @@
 {
-  "name": "rdio-client-app",
+  "name": "bike_rack",
   "version": "0.0.0",
   "dependencies": {
-    "skeleton"      : "https://github.com/dhg/Skeleton.git#2.0.4",
-    "font-awesome"  : "https://github.com/components/font-awesome.git#4.3.0"
+    "skeleton"      : "https://github.com/dhg/Skeleton.git#2.0.4"
   }
 }

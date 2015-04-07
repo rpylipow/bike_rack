@@ -15,6 +15,6 @@ server.register([
   if (err) throw err;
   server.start(function (err) {
     if (err) throw err;
-    console.log('Rdio Client App is running at: http://' + config.http.listen + ':' + config.http.port);
+    console.log('Bike Rack is running at: http://' + config.http.listen + ':' + config.http.port);
   });
 });

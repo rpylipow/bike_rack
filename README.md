@@ -1,4 +1,6 @@
-# Rdio Client App
+# Chicago Bike Racks
+
+Node app to find bike rack in Chicago Neighborhoods 
 
 ## Get Started
 - Clone

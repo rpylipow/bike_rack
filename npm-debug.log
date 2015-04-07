@@ -3,23 +3,23 @@
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart rdio-client-app@0.0.0
-6 info start rdio-client-app@0.0.0
+5 info prestart chow@0.0.0
+6 info start chow@0.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info rdio-client-app@0.0.0 Failed to exec start script
-9 error rdio-client-app@0.0.0 start: `grunt && node server`
-9 error Exit status 8
-10 error Failed at the rdio-client-app@0.0.0 start script.
-10 error This is most likely a problem with the rdio-client-app package,
+8 info chow@0.0.0 Failed to exec start script
+9 error chow@0.0.0 start: `grunt && node server`
+9 error Exit status 6
+10 error Failed at the chow@0.0.0 start script.
+10 error This is most likely a problem with the chow package,
 10 error not with npm itself.
 10 error Tell the author that this fails on your system:
 10 error     grunt && node server
 10 error You can get their info via:
-10 error     npm owner ls rdio-client-app
+10 error     npm owner ls chow
 10 error There is likely additional logging output above.
 11 error System Darwin 13.4.0
 12 error command "node" "/usr/local/bin/npm" "start"
-13 error cwd /Users/rpylipow/sites/rdio_thing
+13 error cwd /Users/rpylipow/sites/bike_thing
 14 error node -v v0.10.32
 15 error npm -v 1.4.28
 16 error code ELIFECYCLE

@@ -23,6 +23,8 @@ module.exports = function(grunt) {
             'client/*.js', 
             'client/pages/*.js', 
             'client/views/*.js', 
+            'client/models/*.js', 
+            'client/collections/*.js', 
             '!client/templates.js'
           ]
     }
@@ -31,7 +33,7 @@ module.exports = function(grunt) {
   var gruntPackages = [ 
                         'grunt-contrib-coffee', 
                         'grunt-contrib-watch', 
-                        'grunt-contrib-clean'
+                        'grunt-contrib-clean',
                       ];
 
   gruntPackages.forEach( grunt.loadNpmTasks );                  

@@ -13,20 +13,21 @@
 
     var templatizer = {};
     templatizer["pages"] = {};
+    templatizer["views"] = {};
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><nav><ul class="container"><li><a href="/">Rdio Client App</a></li><li><a href="/info">more info</a></li></ul></nav><main data-hook="page-container"></main></body>';
+        return '<body><section class="sidebar"><div class="sidebar-wrapper"> <header><h1><a href="/">Bike Rack</a></h1></header><form><div data-hook="test" class="form-group"><label>South Loop</label></div><div class="form-group"><label>Loop</label></div><div class="form-group"><label>Lincoln Park</label></div><div class="form-group"><label>Lake View</label></div><div class="form-group"><label>River North</label></div><div class="form-group"><label>Streeterville</label></div></form><footer> <a href="/info"><small>About this project</small></a></footer></div></section><main data-hook="page-container"></main></body>';
     };
 
     // head.jade compiled template
     templatizer["head"] = function tmpl_head() {
-        return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/>';
+        return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><link href="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css" rel="stylesheet"/><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>';
     };
 
     // pages/home.jade compiled template
     templatizer["pages"]["home"] = function tmpl_pages_home() {
-        return '<section class="page home container"><h2>Welcome to a skeleton for Rdio Client App</h2><p>If you "view source" you\'ll see it\'s 100% client rendered.</p><p>Click around the site using the nav bar at the top. </p><p>Things to note:<ul><li>The url changes, no requests are made to the server.</li><li>Refreshing the page will always get you back to the same page</li><li>Page changes are nearly instantaneous</li><li>In development mode, you don\'t need to restart the server to see changes, just edit and refresh.</li><li>In production mode, it will serve minfied, uniquely named files with super agressive cache headers. To test:<ul> <li>in dev_config.json set <code>isDev</code> to <code>false</code>.</li><li>restart the server.</li><li>view source and you\'ll see minified css and js files with unique names.</li><li>open the "network" tab in chrome dev tools (or something similar). You\'ll also want to make sure you haven\'t disabled your cache.</li><li>without hitting "refresh" load the app again (selecting current URL in url bar and hitting "enter" works great).</li><li>you should now see that the JS and CSS files were both served from cache without making any request to the server at all.</li></ul></li></ul></p></section>';
+        return '<section class="page home"><div id="spinner" class="spinner"><i class="fa fa-spinner fa-spin"></i></div><div id="map" class="map"></div></section>';
     };
 
     // pages/info.jade compiled template
