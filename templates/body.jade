@@ -1,26 +1,13 @@
 body
-  section.sidebar
-    .sidebar-wrapper  
-      header
-        h1
-          a(href='/') Bike Rack
-      
-      form
-        .form-group(data-hook='test')
-          label South Loop
-        .form-group
-          label Loop
-        .form-group
-          label Lincoln Park
-        .form-group
-          label Lake View
-        .form-group
-          label River North
-        .form-group
-          label Streeterville
+  header
+    .brand.pull-left
+      a(href='/')
+        i.fa.fa-star 
+        span Chicago Bike Racks
+    .pull-right
+      label(for='neighborhood_input') Neighborhood 
+        small (more coming soon) :
+      select(id='neighborhood_input')
+        option(value='loop') Loop
 
-      footer  
-        a(href='/info')
-          small About this project
   main(data-hook="page-container")
-    

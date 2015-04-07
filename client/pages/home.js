@@ -10,50 +10,32 @@
   $ = require('jquery');
 
   module.exports = View.extend({
-    pageTitle: 'home',
+    pageTitle: 'Chicago Bike Racks',
     template: templates.pages.home,
     events: {
-      'click a': 'populateRacks'
+      'click a': 'getRacks'
     },
     render: function() {
       this.renderWithTemplate();
-      return this.initGeolocation();
+      return this.getRacks();
     },
-    initGeolocation: function() {
-      $(this.el).find('.spinner').addClass('visible');
-      if (navigator.geolocation) {
-        return navigator.geolocation.getCurrentPosition(this.buildMap, this.locationFail);
-      } else {
-        return alert("Sorry, your browser does not support geolocation services.");
-      }
-    },
-    buildMap: function(position) {
-      var lat, lon;
-      L.mapbox.accessToken = 'pk.eyJ1IjoicnB5bGlwb3ciLCJhIjoiMExyYUpnbyJ9.9CptOCTd472VpgLJcf9D2w';
-      this.map = L.mapbox.map('map', 'rpylipow.lih5p3pp');
-      lat = position.coords.latitude;
-      lon = position.coords.longitude;
-      this.map.setView([lat, lon], 10);
-      L.marker([lat, lon], {
-        icon: L.mapbox.marker.icon({
-          'marker-size': 'large',
-          'marker-color': '#fa0'
-        })
-      }).addTo(this.map);
-      return $(this.el).find('.spinner').removeClass('visible');
-    },
+    initGeolocation: function() {},
+    buildMap: function(position) {},
     locationFail: function() {},
-    populateRacks: function(e) {
+    getRacks: function(e) {
+      $(this.el).find('.spinner').addClass('visible');
       this.collection.setParams('loop');
       return this.collection.fetch({
         success: (function(_this) {
           return function(collection) {
-            return _this.doThing(collection);
+            return $.when(_this.renderRacksMap(collection)).done(function() {
+              return $(_this.el).find('.spinner').removeClass('visible');
+            });
           };
         })(this)
       });
     },
-    doThing: function(collection) {
+    renderRacksMap: function(collection) {
       var i, lat, len, location, lon, ref, results;
       L.mapbox.accessToken = 'pk.eyJ1IjoicnB5bGlwb3ciLCJhIjoiMExyYUpnbyJ9.9CptOCTd472VpgLJcf9D2w';
       this.map = L.mapbox.map('map', 'rpylipow.lih5p3pp');

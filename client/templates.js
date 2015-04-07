@@ -17,7 +17,7 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><section class="sidebar"><div class="sidebar-wrapper"> <header><h1><a href="/">Bike Rack</a></h1></header><form><div data-hook="test" class="form-group"><label>South Loop</label></div><div class="form-group"><label>Loop</label></div><div class="form-group"><label>Lincoln Park</label></div><div class="form-group"><label>Lake View</label></div><div class="form-group"><label>River North</label></div><div class="form-group"><label>Streeterville</label></div></form><footer> <a href="/info"><small>About this project</small></a></footer></div></section><main data-hook="page-container"></main></body>';
+        return '<body><header><div class="brand pull-left"><a href="/"><i class="fa fa-star"> </i><span>Chicago Bike Racks</span></a></div><div class="pull-right"><label for="neighborhood_input">Neighborhood <small>(more coming soon) :</small></label><select id="neighborhood_input"><option value="loop">Loop</option></select></div></header><main data-hook="page-container"></main></body>';
     };
 
     // head.jade compiled template
@@ -27,12 +27,12 @@
 
     // pages/home.jade compiled template
     templatizer["pages"]["home"] = function tmpl_pages_home() {
-        return '<section class="page home"><div id="spinner" class="spinner"><i class="fa fa-spinner fa-spin"></i></div><div id="map" class="map"></div></section>';
+        return '<section class="page home"><div id="spinner" class="spinner"><i class="fa fa-spinner fa-spin"></i></div><div id="map" class="map"></div><a href="/info" class="about">About this project   </a></section>';
     };
 
     // pages/info.jade compiled template
     templatizer["pages"]["info"] = function tmpl_pages_info() {
-        return '<section class="container page pageTwo"><h2>Simple Page Example</h2><p>This page was rendered by a simple page view file at client/pages/info.js.</p></section>';
+        return '<section class="container page about-page"><h1>About this project</h1><p>This site shows bike racks around the Chicago area.</p></section>';
     };
 
     return templatizer;

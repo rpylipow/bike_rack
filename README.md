@@ -2,6 +2,10 @@
 
 Node app to find bike rack in Chicago Neighborhoods 
 
+## Resources 
+- [open data api](http://dev.socrata.com/foundry/#/data.cityofchicago.org/cbyb-69xx) 
+- [Mapbox.js](https://www.mapbox.com/mapbox.js/api/v2.1.6/)
+
 ## Get Started
 - Clone
 - Run `npm i` to install node modules

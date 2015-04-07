@@ -1,7 +1,7 @@
 @import '../_variables'
 @import '../_mixins'
 @import '../_typography'
-@import '_sidebar'
+@import '_header'
 
 body
   background: white
@@ -14,7 +14,7 @@ body
     display: inline-block 
 
 main
-  padding-left: 25%;
+  padding-top: 40px
   
   .map
     width: 100%
@@ -24,9 +24,17 @@ main
     display: none
     position: absolute
     top: 50%
-    left: 60%
+    left: 50%
     font-size: 5rem
     color: #ff0000
     
     &.visible
       display: block
+  
+  .about 
+    display: none
+    position: absolute
+    bottom: 10px
+    left: 20px
+    color: $redHex
+    text-transform: uppercase    

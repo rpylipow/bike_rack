@@ -40,7 +40,7 @@
       this.pageSwitcher = new ViewSwitcher(this.queryByHook('page-container'), {
         show: (function(_this) {
           return function(newView, oldView) {
-            document.title = result(newView, 'pageTitle') || 'Chicago Bike Racks';
+            document.title = result(newView, 'pageTitle') || 'Chow';
             document.scrollTop = 0;
             dom.addClass(newView.el, 'active');
             return app.currentPage = newView;

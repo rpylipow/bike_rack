@@ -1,0 +1,62 @@
+hoverTransition()
+  -webkit-transition: all .5s ease-in-out 0
+  -moz-transition: all .5s ease-in-out 0
+  -ms-transition: all .5s ease-in-out 0
+  -o-transition: all .5s ease-in-out 0 
+  transition: all .5s ease-in-out 0
+
+header
+  width: 100%
+  height: 4rem
+  position: fixed
+  background: $blueHex
+  padding: 0 20px
+  box-sizing: border-box
+  border-bottom: 1px solid $redHex
+  border-bottom: 1px solid darken($blueHex, 20%)
+  
+  .brand 
+    line-height: 4rem 
+     
+    i 
+      color: $redHex
+      margin-right: 5px
+      
+    a 
+      letter-spacing: .1rem
+      font-weight: bold
+      font-size: 2.0rem
+      text-transform: uppercase
+      color: white
+      hoverTransition()
+      
+      &:hover
+        color: darken(white, 3%)
+        
+        i
+          color: darken($redHex, 3%)
+      
+      @media (max-width: 480px) {
+        span {display: none }
+      }    
+  
+  label
+    display: inline-block
+    font-weight: 500
+    text-transform: uppercase
+    color: white
+    margin-right: 10px
+    font-size: 1.5rem
+    
+    small
+      text-transform: none
+      font-size: 1.2rem
+    
+  select
+    display: inline-block
+    background: transparent
+    height: 2.4rem
+    margin-top: .8rem
+    min-width: 100px  
+    border-color: white 
+    color: white     
