@@ -1,5 +1,5 @@
 {
-    "isDev": true,
+    "isDev": false,
     "isSecure": false,
     "session": {
         "host": "localhost",
