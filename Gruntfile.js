@@ -19,6 +19,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
+      build: ['_build'],
       js: [ 
             'client/*.js', 
             'client/pages/*.js', 
